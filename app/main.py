@@ -1,3 +1,7 @@
+'''
+Calculadora de comisiones 
+Este programa permite calcular las comisiones de los trabajadores de la empresa ABC de acuerdo a sus ventas mensuales
+'''
 from flask import Flask, render_template, request
 
 
@@ -6,13 +10,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
+    '''
+    Funcion inicial que muestra el formulario a llenar a fin de calcular las comisiones
+    
+    :return: Carga el 'index.html' 
+    '''
     return render_template('index.html')
 
 @app.route('/comision', methods=['POST'])
 def comision():
+    '''
+    Esta funcion recibe los datos del formulario, realiza los calculos de las comisiones, muestra los resultados y los guarda en el archivo
+    
+    :return: Muestra 'comision.html' con los resultados
+    '''
     if request.method == 'POST':
-        nombre = request.form.get("nombre")
-        apellido = request.form.get("apellido")
+        nombre = str(request.form.get("nombre"))
+        apellido = str(request.form.get("apellido"))
         ventas = float(request.form.get("ventas"))
 
         if ventas > 100000:
@@ -34,14 +48,14 @@ def comision():
             comi = ventas*0.03
             porcentaje = 3
 
-        '''try: Esto me esta jodiendo :'(    si alguien ve esto envien ayuda XD
-            archivo = open("docs/registro.csv", "w")
-            archivo.write(apellido + ", " + nombre + ", " + ventas)
+        try:
+            archivo = open("docs/registro.csv", "a", newline='')
+            archivo.write(apellido + ", " + nombre + ", " + str(ventas) + ", " + str(comi) + "\n")
             archivo.close()
         except FileNotFoundError:
             return render_template("error.html", er="No existe el archivo")
         except:
-            return render_template("error.html", er="Error General")'''
+            return render_template("error.html", er="Error General")
 
         return render_template('comision.html', nom=nombre, ape=apellido, ven=ventas, com=comi, por=porcentaje)
 
