@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC S.A.</title>
+</head>
+<link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico"/>
+<body bgcolor="#AEB6BF">
+
+
+<h1 style="text-align: center;">Calculadora de comisiones</h1>
+<p>&nbsp;</p>
+<table style="border-color: #c0392b; background-color: #f0b27a; margin-left: auto; margin-right: auto;" border="5" cellspacing="5" cellpadding="5"><caption>
+<h3>Ingrese los datos</h3>
+</caption>
+<tbody>
+<tr>
+<td>&nbsp;<form action="http://localhost:5000/comision" method="POST">
+<p style="text-align: left;">Nombre: <input name="nombre" type="text" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/></p>
+<p style="text-align: left;">Apellido: <input name="apellido" type="text" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/></p>
+<p style="text-align: left;">Ventas: <input type="number" name="ventas" min="0" max="9999999"></p>
+<p style="text-align: center;"><input type="submit" value="enviar" /></p>
+</form></td>
+</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC S.A.</title>
+</head>
+<link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico"/>
+<body bgcolor="#AEB6BF">
+<h1 style="text-align: center;">Calculadora de comisiones</h1>
+
+<table style="border-color: #c0392b; background-color: #f0b27a; margin-left: auto; margin-right: auto;" border="5" cellspacing="5" cellpadding="5"><caption>
+<h3>Tu Comision</h3>
+</caption>
+<tbody>
+<tr>
+<td>&nbsp;Nombre:</td>
+<td>&nbsp;{{nom}}</td>
+</tr>
+<tr>
+<td>&nbsp;Apellido:</td>
+<td>&nbsp;{{ape}}</td>
+</tr>
+<tr>
+<td>&nbsp;Ventas:</td>
+<td>&nbsp;$ {{ven}}</td>
+</tr>
+<tr>
+<td>&nbsp;Comision ({{por}}%):</td>
+<td>&nbsp;$ {{com}}</td>
+</tr>
+</tbody>
+</table>
+{% if com == 0 %}
+<h3 style="text-align: center;"><span style="color: #C0392B ;">NO HAS VENDIDO NADA ESTE MES?!&nbsp;</span></h3>
+<h3 style="text-align: center;"><span style="color: #C0392B ;">&iexcl;&iexcl; PONTE A TRABAJAR PEREZOSO !!&nbsp;</span></h3>
+{% endif %}
+<form action="http://localhost:5000/" method="GET">
+        <p style="text-align: center;"> <input type="submit" VALUE="Ingresar otro empleado"></p>
+</form>
+</body>
+</html>
